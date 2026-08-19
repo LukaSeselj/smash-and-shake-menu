@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;900&display=swap');
+
 :root {
   --green: #104030;
   --green-dark: #0b2f24;
@@ -22,7 +24,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Roboto Condensed", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
     radial-gradient(circle at 18% -12%, rgba(248, 196, 40, .18), transparent 28rem),
     var(--green);
@@ -99,9 +101,10 @@ a {
   gap: 8px;
   overflow-x: auto;
   padding: 12px 0;
-  background: var(--green);
+  background: linear-gradient(to bottom, var(--green) 78%, rgba(16, 64, 48, .94));
   border-bottom: 1px solid rgba(255, 250, 240, .10);
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .quick-nav::-webkit-scrollbar {
@@ -115,20 +118,23 @@ a {
   border: 1px solid var(--line);
   background: rgba(255, 250, 240, .07);
   color: var(--white);
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-weight: 850;
   font-size: 14px;
   white-space: nowrap;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
-.pill.primary {
+.pill.active {
   background: var(--yellow);
   color: var(--green-dark);
   border-color: transparent;
+  box-shadow: 0 0 0 2px rgba(248, 196, 40, .18);
 }
 
 .section {
   margin-top: 22px;
-  scroll-margin-top: 72px;
+  scroll-margin-top: 82px;
 }
 
 .section-head {
@@ -141,6 +147,7 @@ a {
 
 h2 {
   margin: 0;
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-size: 25px;
   line-height: 1;
   letter-spacing: -.05em;
@@ -176,6 +183,7 @@ h2 {
 .burger-info h3,
 .item h3 {
   margin: 0;
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-size: 18px;
   line-height: 1.1;
   letter-spacing: -.025em;
@@ -219,7 +227,6 @@ h2 {
   z-index: 1;
 }
 
-/* gornja zemička */
 .burger-size span::before {
   content: "";
   position: absolute;
@@ -233,7 +240,6 @@ h2 {
   z-index: -1;
 }
 
-/* donji slojevi burgera */
 .burger-size span::after {
   content: "";
   position: absolute;
@@ -250,6 +256,7 @@ h2 {
 
 .burger-size strong {
   color: var(--white);
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-size: 14px;
   font-weight: 950;
   line-height: 1;
@@ -263,9 +270,9 @@ h2 {
 }
 
 .item.feature {
-  border-color: rgba(248, 196, 40, .50);
+  border-color: rgba(248, 196, 40, .52);
   background:
-    linear-gradient(135deg, rgba(248, 196, 40, .16), rgba(255, 250, 240, .06)),
+    linear-gradient(135deg, rgba(248, 196, 40, .18), rgba(255, 250, 240, .065)),
     var(--card-strong);
 }
 
@@ -278,6 +285,7 @@ h2 {
 
 .price {
   flex: 0 0 auto;
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-size: 16px;
   font-weight: 950;
   color: var(--yellow);
@@ -307,6 +315,7 @@ h2 {
 }
 
 .compact b {
+  font-family: "Roboto Slab", "Roboto Condensed", serif;
   font-size: 15px;
   color: var(--white);
 }
@@ -323,6 +332,45 @@ h2 {
 
 .muted-item span {
   color: var(--muted-soft);
+}
+
+.section-en,
+.item-en,
+.desc-en {
+  display: block;
+  color: rgba(255, 250, 240, .62);
+  font-family: "Roboto Condensed", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.section-en {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.item-en {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+.desc-en {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 250, 240, .56);
+}
+
+.compact b .item-en {
+  margin-top: 2px;
+}
+
+.burger-info p .desc-en,
+.desc .desc-en {
+  margin-top: 5px;
 }
 
 .footer {
@@ -377,58 +425,20 @@ h2 {
   }
 
   .burger-size {
-  min-height: 64px;
-  padding: 7px 5px;
-}
+    min-height: 64px;
+    padding: 7px 5px;
+  }
 
-.burger-size span {
-  width: 42px;
-  height: 28px;
-}
+  .burger-size span {
+    width: 42px;
+    height: 28px;
+  }
 
-.burger-size strong {
-  font-size: 13px;
-}
+  .burger-size strong {
+    font-size: 13px;
+  }
 
   .price {
     font-size: 15px;
   }
-}
-.section-en,
-.item-en,
-.desc-en {
-  display: block;
-  color: rgba(255, 250, 240, .62);
-  font-family: "Roboto Condensed", Inter, ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.section-en {
-  margin-top: 3px;
-  font-size: 13px;
-  line-height: 1.1;
-}
-
-.item-en {
-  margin-top: 3px;
-  font-size: 12px;
-  line-height: 1.15;
-}
-
-.desc-en {
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.35;
-  color: rgba(255, 250, 240, .56);
-}
-
-.compact b .item-en {
-  margin-top: 2px;
-}
-
-.burger-info p .desc-en,
-.desc .desc-en {
-  margin-top: 5px;
 }
