@@ -394,3 +394,41 @@ h2 {
     font-size: 15px;
   }
 }
+.section-en,
+.item-en,
+.desc-en {
+  display: block;
+  color: rgba(255, 250, 240, .62);
+  font-family: "Roboto Condensed", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.section-en {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.item-en {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+.desc-en {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 250, 240, .56);
+}
+
+.compact b .item-en {
+  margin-top: 2px;
+}
+
+.burger-info p .desc-en,
+.desc .desc-en {
+  margin-top: 5px;
+}
